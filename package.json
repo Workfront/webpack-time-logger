@@ -1,0 +1,11 @@
+{
+  "name": "webpack-intro",
+  "version": "0.0.0",
+  "description": "Introduction to Webpack sample app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Lund <jeremylund@attask.com>",
+  "license": "Apache-2.0"
+}
