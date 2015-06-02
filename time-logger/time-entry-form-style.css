@@ -1,0 +1,8 @@
+.time-entry-form {
+  background: #bada55;
+  padding: 1em;
+}
+
+.time-entry-form__time, .time-entry-form__category, .time-entry-form__description, .time-entry-form__submit {
+  font-size: 1.5em;
+}

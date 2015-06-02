@@ -1,0 +1,33 @@
+.time-logger-nav {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-logger-nav .prev, .time-logger-nav .next {
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #eee;
+}
+
+.time-logger-nav .prev:hover, .time-logger-nav .next:hover {
+  border-width: 2px;
+  padding: 3px;
+}
+
+.time-logger-nav .prev {
+  order: 1;
+}
+
+.time-logger-nav .date {
+  order: 2;
+  margin: 10px;
+}
+
+.time-logger-nav .next {
+  order: 3;
+}

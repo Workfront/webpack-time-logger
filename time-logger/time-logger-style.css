@@ -1,0 +1,9 @@
+.time-logger {
+  width: 960px;
+  margin: auto;
+}
+
+.time-logger__title {
+  margin:0;
+  background: #bada55;
+}

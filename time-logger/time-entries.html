@@ -1,0 +1,7 @@
+<ul class="time-logger-entries">
+  <li ng-repeat="entry in vm.entries">
+    {{entry.time}}
+    <span ng-if="entry.category" class="label">{{entry.category}}</span>
+    {{entry.description}}
+  </li>
+</ul>

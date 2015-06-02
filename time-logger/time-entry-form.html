@@ -1,0 +1,6 @@
+<form class="time-entry-form" ng-submit="vm.addTimeEntry()" name="addTimeEntry" novalidate>
+  <input type="text" ng-model="vm.newEntry.time" class="time-entry-form__time" required pattern="^(1?[0-9]|2[0-3]):[0-5][0-9]$" placeholder="hh:mm" maxlength="5">
+  <input type="text" ng-model="vm.newEntry.category" class="time-entry-form__category" placeholder="category">
+  <input type="text" ng-model="vm.newEntry.description" class="time-entry-form__description" required placeholder="description">
+  <button type="submit" class="time-entry-form__submit" ng-disabled="addTimeEntry.$invalid">Add</button>
+</form>

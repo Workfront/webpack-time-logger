@@ -1,0 +1,5 @@
+<div class="time-logger-nav">
+  <h3 class="date">{{date | moment : 'MMMM Do, YYYY'}}</h3>
+  <a class="prev" href="#/{{date.clone().subtract(1,'d') | moment : 'YYYY-MM-DD'}}">&#8678;</a>
+  <a class="next" href="#/{{date.clone().add(1, 'd') | moment : 'YYYY-MM-DD'}}">&#8680;</a>
+</div>

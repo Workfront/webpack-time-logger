@@ -2,6 +2,6 @@
 .tmp/
 node_modules/
 npm-debug.log
-npm-shrinkwrap.json.bak
-coverage/
+time-logger.js
+time-logger.js.map
 *.iml
