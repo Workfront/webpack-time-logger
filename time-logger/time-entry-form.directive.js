@@ -1,5 +1,5 @@
 'use strict';
-require('style!css!./time-entry-form-style.css');
+require('./time-entry-form-style.css');
 function TimeEntryFormDirective() {
   return {
     restrict: 'E',

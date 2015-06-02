@@ -1,5 +1,5 @@
 'use strict';
-require('style!css!./time-logger-nav-style.css');
+require('./time-logger-nav-style.css');
 function TimeLoggerNavDirective() {
   return {
     restrict: 'E',
