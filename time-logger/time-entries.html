@@ -4,4 +4,5 @@
     <span ng-if="entry.category" class="label">{{entry.category}}</span>
     {{entry.description}}
   </li>
+  <li class="empty" ng-if="vm.entries.length == 0">No entries</li>
 </ul>
