@@ -33,5 +33,6 @@ function TimeEntrySmartDirective() {
 }
 
 module.exports = function(ngModule) {
-  ngModule.directive('timeEntrySmart', TimeEntrySmartDirective);
+  // NOTE: named the same as the old directive since we're using it in the same place
+  ngModule.directive('timeEntryForm', TimeEntrySmartDirective);
 };

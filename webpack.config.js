@@ -4,11 +4,14 @@ var path = require('path');
 
 module.exports = {
   context: path.join(__dirname),
-  entry: './time-logger-app.js',
+  entry: {
+    'time-logger': './time-logger-app.js',
+    'time-logger-2': './time-logger-app-2.js'
+  },
   output: {
     libraryTarget: 'umd',
     path: path.join(__dirname),
-    filename: 'time-logger.js'
+    filename: '[name].js'
   },
   devtool: 'source-map',
   module: {

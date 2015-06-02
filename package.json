@@ -4,7 +4,7 @@
   "description": "Introduction to Webpack sample app",
   "main": "index.js",
   "scripts": {
-    "clean": "rm time-logger.js time-logger.js.map",
+    "clean": "rm time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map",
     "start": "webpack && http-server -p 8080",
     "watch": "webpack-dev-server --hot --inline --config webpack.config.js"
   },

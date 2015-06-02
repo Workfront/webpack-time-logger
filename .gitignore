@@ -4,4 +4,6 @@ node_modules/
 npm-debug.log
 time-logger.js
 time-logger.js.map
+time-logger-2.js
+time-logger-2.js.map
 *.iml
