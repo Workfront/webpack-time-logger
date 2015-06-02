@@ -4,8 +4,8 @@
   "description": "Introduction to Webpack sample app",
   "main": "index.js",
   "scripts": {
-    "clean": "rm bundle.js bundle.js.map",
-    "start": "webpack -p && http-server -p 8080",
+    "clean": "rm time-logger.js time-logger.js.map",
+    "start": "webpack && http-server -p 8080",
     "watch": "webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "author": "Jeremy Lund <jeremylund@workfront.com>",

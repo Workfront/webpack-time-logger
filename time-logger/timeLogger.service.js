@@ -33,9 +33,21 @@ function TimeLoggerService($q, $window) {
   function getAllForDate(date) {
     return getAll()
       .then(function(list) {
-        return list.filter(function(entry) {
+        var results = list.filter(function(entry) {
           return moment(entry.date, 'YYYY-MM-DD').isSame(date);
         });
+        results.sort(function(entry1, entry2) {
+          var time1 = moment(entry1.time, 'hh:mm');
+          var time2 = moment(entry2.time, 'hh:mm');
+          if (time1.isBefore(time2)) {
+            return -1;
+          } else if (time2.isBefore(time1)) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        return results;
       });
   }
 

@@ -1,0 +1,24 @@
+.time-entry-smart {
+  background: #bada55;
+  padding: 1em;
+}
+
+.time-entry-smart__entry {
+  font-size: 1.5em;
+}
+
+.time-entry-smart__entry.ng-valid {
+  border-color: green;
+}
+
+.time-entry-smart .valid:after {
+  content: "\1F44D";
+}
+
+.time-entry-smart__entry.ng-invalid {
+  border-color: red;
+}
+
+.time-entry-smart .invalid:after {
+  content: "\1F44E";
+}

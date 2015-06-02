@@ -17,6 +17,6 @@ require('./time-logger.directive')(ngModule);
 require('./time-logger-nav.directive')(ngModule);
 require('./time-entries.directive')(ngModule);
 
-require('./time-entry-form.directive')(ngModule);
+require('./time-entry-smart.directive')(ngModule);
 
 module.exports = ngModule;
