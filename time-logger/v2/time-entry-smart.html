@@ -1,0 +1,5 @@
+<form class="time-entry-smart" ng-submit="addTimeEntry.$valid && vm.addTimeEntry()" name="addTimeEntry" novalidate>
+  <input type="text" ng-model="vm.entryText" class="time-entry-smart__entry" required ng-pattern="vm.entryPattern"/>
+  <span ng-class="{ valid: addTimeEntry.$valid, invalid: addTimeEntry.$invalid }"></span>
+  <div><em>hh:mm? #category? description</em></div>
+</form>
