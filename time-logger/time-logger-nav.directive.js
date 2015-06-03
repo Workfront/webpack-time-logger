@@ -3,7 +3,7 @@ require('./time-logger-nav-style.css');
 function TimeLoggerNavDirective() {
   return {
     restrict: 'E',
-    template: require('./time-logger-nav.html'),
+    templateUrl: 'time-logger/time-logger-nav.html',
     scope: {
       date: '='
     }
