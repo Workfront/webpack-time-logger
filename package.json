@@ -1,7 +1,7 @@
 {
-  "name": "webpack-intro",
+  "name": "webpack-time-logger",
   "version": "0.0.0",
-  "description": "Introduction to Webpack sample app",
+  "description": "A sample application used to understand Webpack",
   "main": "index.js",
   "scripts": {
     "clean": "rm time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
