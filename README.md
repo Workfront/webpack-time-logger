@@ -124,3 +124,43 @@ We have told Webpack that we have two entry points: `./time-logger-app.js` and `
 
 * Run `npm run watch`, and refresh your browser. The app should work as before.
 * Navigate to `http://localhost:8080/index-2.html`. You should see the same time logger with the "smart" entry form.
+
+### Optimize the Application Using CommonsChunkPlugin (tag: **commons-chunk**)
+
+* In the browser dev tools, look for the `time-logger.js` or `time-logger-2.js` file request. Notice that the size of the file is about 1.4MB. This file is too big, especially when both versions of the applications share mostly the same code. Let's combine the common code into a separate bundle.
+* Before we make the changes, stop the webpack dev server and run `webpack` in the terminal. Observe how long it takes to run the webpack, and look at the files sizes. `time-logger-1.js` and `time-logger-2.js` should both be the same size, which is around 1.4MB.
+* In `webpack.config.js`, make the following changes:
+
+```js
+var path = require('path');
+// Add the next line.
+var webpack = require('webpack');
+
+// ...
+
+plugins: [
+// ... other plugin definitions
+// Add this line.
+  new webpack.optimize.CommonsChunkPlugin('common.js')
+]
+```
+
+This will look through all of our entry points and combine any common code into a bundle called `common.js`.
+
+Of course, we also need to tell the web page to load this file along with the app-specific bundle. This can be done a number of ways, but we're going to do by just adding a script tag to the HTML pages.
+
+```html
+<!-- index.html -->
+<script src="common.js"></script> <!-- Add this line -->
+<script src="time-logger.js"></script>
+```
+
+```html
+<!-- index-2.html -->
+<script src="common.js"></script> <!-- Add this line -->
+<script src="time-logger-2.js"></script>
+```
+
+* Run `webpack` again. Notice that the build is not only slightly faster, but look at the file sizes. Since `time-logger-1.js` and `time-logger-2.js` contain the code unique to each app, they are very small. There is a new file now, `common.js`, that contains the bulk of the code. We made this optimization without changing a single line of application code!
+* Run `npm run watch`, then refresh the browser window. In the browser dev tools, you should now see two requests: one for `common.js` and one for the time-logger app file (`time-logger-1.js` or `time-logger-2.js`, depending on which page you're on).
+
