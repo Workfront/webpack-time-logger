@@ -2,6 +2,11 @@
   "name": "webpack-time-logger",
   "version": "0.0.0",
   "description": "A sample application used to understand Webpack",
+  "homepage": "http://github.slc.us.workfront.net/jeremylund/webpack-time-logger",
+  "repository": {
+    "type": "git",
+    "url": "git@http://github.slc.us.workfront.net/:jeremylund/webpack-time-logger.git"
+  },
   "main": "index.js",
   "scripts": {
     "clean": "rm time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
