@@ -48,7 +48,7 @@ function TimeLoggerService($q, $window) {
           }
         });
         return results;
-      })
+      });
   }
 
   return {

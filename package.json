@@ -18,6 +18,8 @@
   "devDependencies": {
     "css-loader": "^0.14.4",
     "http-server": "^0.8.0",
+    "jshint": "^2.8.0",
+    "jshint-loader": "^0.8.3",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "node-libs-browser": "^0.5.2",
     "raw-loader": "^0.5.1",
