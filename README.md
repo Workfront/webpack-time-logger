@@ -164,3 +164,50 @@ Of course, we also need to tell the web page to load this file along with the ap
 * Run `webpack` again. Notice that the build is not only slightly faster, but look at the file sizes. Since `time-logger-1.js` and `time-logger-2.js` contain the code unique to each app, they are very small. There is a new file now, `common.js`, that contains the bulk of the code. We made this optimization without changing a single line of application code!
 * Run `npm run watch`, then refresh the browser window. In the browser dev tools, you should now see two requests: one for `common.js` and one for the time-logger app file (`time-logger-1.js` or `time-logger-2.js`, depending on which page you're on).
 
+### Optimize the Application Using Externals (tag: **externals**)
+
+In the last section, we improved reduced the amount of code that the application may need to load by combining common code into a single file. But, `common.js` is still pretty big (around 1.4MB). In this section, we'll look at reducing the code size through externals. In Webpack, externals are dependencies that are needed by your bundle, but will be provided to the bundle, rather than baked into the bundle.
+
+Moment, Angular, and Angular-Route are dependencies that are not unique to our bundles, and our application may benefit from loading them from a CDN or some other source.
+
+* In `webpack.config.js`, add an `externals` section with the following changes:
+
+```js
+  plugins: [
+    // ... plugin definitions
+  ],
+  externals: {
+    angular: true,
+    'angular-route': '"ngRoute"',
+    'moment': true
+  }
+```
+
+We are telling Webpack to not include angular, angular-route, and moment in the bundle, and we are also telling Webpack how to access the externals. `angular: true` tells Webpack that the dependency is accessible on the global scope using the same name. So, it will access angular using the value `window.angular`. The same is true for moment.
+
+The angular-route dependency is a little different. Angular-route normally returns the module name as the dependency, so that's what we're returning here.
+
+* Since we told Webpack that we'd provide angular, angular-route, and moment, add them to the HTML pages:
+
+```html
+<!-- index.html -->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/moment/moment.js"></script>
+<script src="common.js"></script>
+<script src="time-logger.js"></script>
+```
+
+```html
+<!-- index-2.html -->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/moment/moment.js"></script>
+<script src="common.js"></script>
+<script src="time-logger-2.js"></script>
+```
+
+* Run `webpack`. Notice how fast Webpack runs now (because it doesn't need to process angular, angular-route, or moment), and how much smaller the files are.
+* Run `webpack -p`. The `-p` switch runs UglifyJS on the files after building them, which results in much smaller files. Look at the file sizes! NOTE: you might need to scroll back up a little bit to see the results. UglifyJS like to output a lot of junk. Just ignore it.
+* Run `npm run watch` and refresh the browser to make sure your application still works!
+
