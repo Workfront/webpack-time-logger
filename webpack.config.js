@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname),
@@ -14,5 +15,8 @@ module.exports = {
       {test: /\.css$/, loaders: ['style', 'css']},
       {test: /\.html$/, loader: 'raw'}
     ]
-  }
+  },
+  plugins: [
+    new NgAnnotatePlugin({add: true})
+  ]
 };
