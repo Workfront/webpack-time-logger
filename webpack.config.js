@@ -1,6 +1,7 @@
 'use strict';
 var path = require('path');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname),
@@ -23,6 +24,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new NgAnnotatePlugin({add: true})
+    new NgAnnotatePlugin({add: true}),
+    new webpack.optimize.CommonsChunkPlugin('common.js')
   ]
 };
