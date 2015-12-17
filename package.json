@@ -8,7 +8,6 @@
     "url": "https://github.com/Workfront/webpack-time-logger.git"
   },
   "private": true,
-  "main": "index.js",
   "scripts": {
     "clean": "rimraf time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
     "start": "webpack && http-server -p 8080",
