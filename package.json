@@ -18,6 +18,8 @@
   "devDependencies": {
     "css-loader": "0.23.0",
     "http-server": "0.8.5",
+    "jshint": "^2.8.0",
+    "jshint-loader": "^0.8.3",
     "ng-annotate-loader": "0.0.10",
     "raw-loader": "0.5.1",
     "rimraf": "2.4.4",
