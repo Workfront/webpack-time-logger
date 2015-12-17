@@ -19,33 +19,36 @@ Open up your browser's developer tools. Observe that there is the following erro
 > Uncaught Error: [$injector:modulerr] Failed to instantiate module time-logger due to:
 Error: [$injector:strictdi] function($routeProvider) is not using explicit annotation and cannot be invoked in strict mode
 
-This error has occured because we have not made our Angular code minification safe by adding the appropriate Angular annotations. Webpack can perform this responsibility for use automatically through the use of a Webpack plugin:
+This error has occured because we have not made our Angular code minification safe by adding the appropriate Angular annotations. 
+Webpack can perform this responsibility through the use of a Webpack loader:
 
-* In a terminal, type `npm i ng-annotate-webpack-plugin -D`. This will install the necessary plugin.
+* In a terminal, type `npm i ng-annotate-loader -DE`. This will install the necessary Webpack loader.
 * In `webpack.config.js` make the following changes
 
 ```js
 var path = require('path');
-// Add the following line
-var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 // ...
 module: {
-// ...
-},
-// Add this right after module section of config
-plugins: [
-  new NgAnnotatePlugin({add: true})
-]
+  loaders: [
+  // Add this line
+    {test: /\.js$/, loader: 'ng-annotate'},
+    {test: /\.css$/, loaders: ['style', 'css']},
+    {test: /\.html$/, loader: 'raw'}
+  ]
+}
 ```
 
 * Save the file, then run `npm run watch`. Now reload the browser, and you'll see the running application.
+
+NOTE: An earlier version of this tutorial recommended using `ng-annotate-webpack-plugin`. 
+I now recommend `ng-annotate-loader` instead as it handles generated source maps correctly.
 
 ### Add Linting (tag: **linting**)
 
 Webpack can execute JSHint with every file change using the Webpack loader that runs as a pre-loader.
 
-* In a terminal, type `npm i jshint-loader -D`.
+* In a terminal, type `npm i jshint-loader jshint@2.8.0 -D`.
 * In `webpack.config.js`, add a preloaders section preceding the loaders section, like so:
 
 ```js

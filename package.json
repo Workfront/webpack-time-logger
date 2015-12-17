@@ -2,35 +2,35 @@
   "name": "webpack-time-logger",
   "version": "0.0.0",
   "description": "A sample application used to understand Webpack",
-  "homepage": "http://github.slc.us.workfront.net/jeremylund/webpack-time-logger",
+  "homepage": "https://github.com/Workfront/webpack-time-logger",
   "repository": {
-    "type": "git",
-    "url": "git@http://github.slc.us.workfront.net/:jeremylund/webpack-time-logger.git"
+    "type": "git+https",
+    "url": "https://github.com/Workfront/webpack-time-logger.git"
   },
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "clean": "rm time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
+    "clean": "rimraf time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
     "start": "webpack && http-server -p 8080",
     "watch": "webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "author": "Jeremy Lund <jeremylund@workfront.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "css-loader": "^0.14.4",
-    "http-server": "^0.8.0",
+    "css-loader": "0.23.0",
+    "http-server": "0.8.5",
     "jshint": "^2.8.0",
     "jshint-loader": "^0.8.3",
-    "ng-annotate-webpack-plugin": "^0.1.2",
-    "node-libs-browser": "^0.5.2",
-    "raw-loader": "^0.5.1",
-    "style-loader": "^0.12.3",
-    "uuid": "^2.0.1",
-    "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0"
+    "ng-annotate-loader": "0.0.10",
+    "raw-loader": "0.5.1",
+    "rimraf": "2.4.4",
+    "style-loader": "0.13.0",
+    "uuid": "2.0.1",
+    "webpack": "1.12.9",
+    "webpack-dev-server": "1.14.0"
   },
   "dependencies": {
-    "angular": "1.3.15",
-    "angular-route": "1.3.15",
-    "moment": "~2.9.0"
+    "angular": "1.3.19",
+    "angular-route": "1.3.19",
+    "moment": "2.10.6"
   }
 }
