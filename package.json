@@ -10,7 +10,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "clean": "rm time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
+    "clean": "rimraf time-logger.js time-logger.js.map time-logger-2.js time-logger-2.js.map common.js common.js.map",
     "start": "webpack && http-server -p 8080",
     "watch": "webpack-dev-server --hot --inline --config webpack.config.js"
   },
@@ -20,6 +20,7 @@
     "css-loader": "0.23.0",
     "http-server": "0.8.5",
     "raw-loader": "0.5.1",
+    "rimraf": "2.4.4",
     "style-loader": "0.13.0",
     "uuid": "2.0.1",
     "webpack": "1.12.9",
