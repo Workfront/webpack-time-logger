@@ -48,7 +48,7 @@ I now recommend `ng-annotate-loader` instead as it handles generated source maps
 
 Webpack can execute JSHint with every file change using the Webpack loader that runs as a pre-loader.
 
-* In a terminal, type `npm i jshint-loader -D`.
+* In a terminal, type `npm i jshint-loader jshint@2.8.0 -D`.
 * In `webpack.config.js`, add a preloaders section preceding the loaders section, like so:
 
 ```js
