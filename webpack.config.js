@@ -25,5 +25,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('common.js')
-  ]
+  ],
+  externals: {
+    angular: true,
+    'angular-route': '"ngRoute"',
+    'moment': true
+  }
 };
