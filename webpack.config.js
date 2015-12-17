@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname),
@@ -21,5 +22,8 @@ module.exports = {
       {test: /\.css$/, loaders: ['style', 'css']},
       {test: /\.html$/, loader: 'raw'}
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('common.js')
+  ]
 };
