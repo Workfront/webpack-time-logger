@@ -11,7 +11,6 @@ module.exports = {
   devtool: 'source-map',
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'ng-annotate'},
       {test: /\.css$/, loaders: ['style', 'css']},
       {test: /\.html$/, loader: 'raw'}
     ]
